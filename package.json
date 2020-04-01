@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/fac19/week5-cjhk#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2",
     "tap-spec": "^5.0.0",
