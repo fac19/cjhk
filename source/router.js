@@ -2,7 +2,9 @@ const handlers = require("./handlers");
 
 function router(request, response) {
   const { url, method } = request;
-  if (url === "/") {
+  if (url === "/" && method === "GET") {
+    handlers.homeHandler(request, response);
+  } else if (url === "/" && method === "POST") {
     handlers.homeHandler(request, response);
   } else if (url.includes("public")) {
     handlers.publicHandler(request, response);
