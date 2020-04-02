@@ -14,9 +14,8 @@ const types = {
 function homeHandler(request, response) {
   // const filter = request
   model
-    .getTools('Work') // return tools object with name, likes, desc, user
+    .getTools('%') // return tools object with name, likes, desc, user
     .then(tools => {
-        console.log(tools)
       templates.home(tools);
       response.writeHead(200, { "content-type": "text/html" });
       const html = templates.home(tools);
@@ -51,7 +50,6 @@ function addPageHandler(request, response) {
   response.writeHead(200, { "content-type": "text/html" });
   const formPage = templates.addPage();
   response.end(formPage);
-
   response.on("error", error => {
     console.error(error);
     missingHandler(request, response);
