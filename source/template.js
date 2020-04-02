@@ -35,7 +35,7 @@ function printTools(tools) {
             <p class="tool-card__user">Added by: ${tool.added_by}</p>
             <p class="tool-card__desc">What is it: ${tool.tool_description}</p>
             <a class="tool-card__link" href="https://www.${tool.tool_link}">Link</a>
-            <a class="tool-card__request-delete" href="">Request delete</a>
+            <p class="tool-card__category">Category: ${tool.category}</p>
       </article>
       `;
   }).join("");
@@ -65,29 +65,29 @@ function addPage() {
     `<form action="create-tool" method="POST">
         <fieldset>
           <legend>Category:</legend>
-          <input type="radio" id="work" name="category" value="work" required>
+          <input type="radio" id="work" name="category" value="Work" required>
           <label for="work">Work</label>
-          <input type="radio" id="social" name="category" value="social" required>
+          <input type="radio" id="social" name="category" value="Social" required>
           <label for="social">Social</label>
-          <input type="radio" id="entertainment" name="category" value="entertainment" required>
+          <input type="radio" id="entertainment" name="category" value="Entertainment" required>
           <label for="entertainment">Entertainment</label>
-          <input type="radio" id="health" name="category" value="health" required>
+          <input type="radio" id="health" value="Health" required>
           <label for="health">Health</label>
-          <input type="radio" id="news" name="category" value="news" required>
+          <input type="radio" id="news" name="category" value="News" required>
           <label for="news">News</label>
         </fieldset>
 
-       <label for="tool-name">Name</label>
-       <input id="tool-name" name="tool-name" required>
+        <label for="tool_name">Name</label>
+        <input id="tool_name" name="tool_name" required>
 
-       <label for="description">Description</label>
-       <input id="description" name="description" required>
+        <label for="tool_description">Description</label>
+        <input id="tool_description" name="tool_description" required>
        
-       <label for="link">Link</label>
-       <input id="link" name="link" required>
+       <label for="tool_link">Link https://www.</label>
+       <input id="tool_link" name="tool_link" placeholder="google.com" required>
        
-       <label for="username">Username</label>
-       <input id="username" name="username" required>
+       <label for="added_by">Username</label>
+       <input id="added_by" name="added_by" required>
        
        <button type="submit">Post tool</button>
      </form>`

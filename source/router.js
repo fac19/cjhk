@@ -10,7 +10,7 @@ function router(request, response) {
     handlers.publicHandler(request, response);
   } else if (url === "/add" && method == "GET") {
     handlers.addPageHandler(request, response);
-  } else if (url === "/add" && method == "POST") {
+  } else if (url === "/create-tool" && method == "POST") {
     handlers.addToolHandler(request, response);
   } else {
     handlers.missingHandler(request, response);
