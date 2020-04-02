@@ -2,7 +2,8 @@
   "name": "week5-cjhk",
   "version": "1.0.0",
   "engines": {
-    "node": "12.16.x",
+    "node": "12.16.x"
+  },
   "description": "Week 5 project",
   "main": "index.js",
   "scripts": {
