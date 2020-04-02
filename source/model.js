@@ -12,8 +12,12 @@ function createTool(userEntry){
     );
 }
 
-function addLove(){
-    // UPDATE the love column in whatever card the love was clicked
+function addLove(id){
+    return db.query(`
+    UPDATE user_input
+    SET love = love + 1
+    WHERE id = ${id}
+    `);
 }
 
 module.exports = { getTools, createTool, addLove };

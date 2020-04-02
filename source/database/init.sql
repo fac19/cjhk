@@ -22,7 +22,7 @@ INSERT INTO user_input (category, tool_name, tool_description, tool_link, added_
 ('Health','Headspace','Stress relief, breath and relax with us','https://www.headspace.com/','mindmelt', 9),
 ('Social','WhatsApp','Speak to friends and family online','whatsapp.com','helloareyouthere12', 100),
 ('Work','Zoom','Video conferencing with team','zoom.com','joblover60', 2),
-('Entertainment', 'steam', 'Buy and play multiplayer games line overcooked', 'steam.com', 'game-master994', 22)
+('Entertainment', 'Steam', 'Buy and play multiplayer games line overcooked', 'steam.com', 'game-master994', 22)
 ;
 
 COMMIT;
