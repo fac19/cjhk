@@ -13,6 +13,7 @@ function htmlSkeleton(redirect, content) {
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/743c019083.js" crossorigin="anonymous"></script>
         <link href="public/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>SRV|VRS</h1>
