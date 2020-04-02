@@ -1,5 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    margin: 2rem;
+}
+
 .cat {
     color: blue;
     font-size: 5rem;
     cursor: pointer;
 }
+
+form {
+    position: relative;
+    background-color: hsl(0, 0%, 95%);
+    width: 80vw;
+    height: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hsl(0, 0%, 95%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px ;
+}
+
+
