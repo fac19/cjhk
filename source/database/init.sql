@@ -25,4 +25,4 @@ INSERT INTO user_input (category, tool_name, tool_description, tool_link, added_
 ('Entertainment', 'steam', 'Buy and play multiplayer games line overcooked', 'steam.com', 'game-master994', 22)
 ;
 
-COMMIT;_
+COMMIT;
