@@ -10,11 +10,13 @@ const types = {
   ico: "image/x-icon"
 };
 
+
 // MODEL => TEMPLATE
 function homeHandler(request, response) {
-  // const filter = request
+  console.log(request);
+  const filter = "Work";
   model
-    .getTools(`%`) // return tools object with name, likes, desc, user
+    .getTools(filter) // return tools object with name, likes, desc, user
     .then(tools => {
       templates.home(tools);
       response.writeHead(200, { "content-type": "text/html" });

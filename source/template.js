@@ -9,8 +9,9 @@ function htmlSkeleton(redirect, content) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Never stop PICKing</title>
+        <title>Survive the virus</title>
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/743c019083.js" crossorigin="anonymous"></script>
         <link href="public/styles.css" rel="stylesheet">
     </head>
     <body>
@@ -28,12 +29,13 @@ function htmlSkeleton(redirect, content) {
 function printTools(tools) {
   return tools.map(tool => {
     return `
-      <article class="tool-card"> 
-            <h2 class="tool-card__name">Name: ${tool.tool_name}</h2>
-            <p class="tool-card__desc">Description: ${tool.tool_description}</p>
-            <p class="tool-card__link">Link: ${tool.tool_link}</p>
+      <article id="tool_${tool.id}" class="tool-card"> 
+            <h2 class="tool-card__name">${tool.tool_name}</h2>
+            <a class="tool-card__love-icon"><i class="fas fa-heart"></i></a><p>${tool.love}</p>
+            <p class="tool-card__user">Added by: ${tool.added_by}</p>
+            <p class="tool-card__desc">What is it: ${tool.tool_description}</p>
+            <a class="tool-card__link" href="https://www.${tool.tool_link}">Link</a>
             <p class="tool-card__category">Category: ${tool.category}</p>
-            <p class="tool-card__user">Added By: ${tool.added_by}</p>
       </article>
       `;
   }).join("");
@@ -44,7 +46,15 @@ function home(tools) {
     // Redirect Parameter 
     `<a href='/add'><h2>Add a tool!</h2></a>`,
     // Content Parameter 
-    printTools(tools));
+    `
+    <div id="categoryIcon" class="cat">
+      <a class="cat__work-icon"><i class="fas fa-briefcase"></i></a>
+      <a class="cat__social-icon"><i class="fas fa-people-arrows"></i></a>
+      <a class="cat__ent-icon"><i class="fas fa-photo-video"></i></a>
+      <a class="cat__health-icon"><i class="fas fa-heartbeat"></i></a>
+      <a class="cat__news-icon"><i class="far fa-newspaper"></i></a>
+    </div>
+    ${printTools(tools)}`);
 }
 
 function addPage() {
@@ -53,24 +63,28 @@ function addPage() {
     `<a href='/'><h2>Go back home!</h2></a>`,
     // Content Parameter 
     `<form action="create-tool" method="POST">
+        <fieldset>
+          <legend>Category:</legend>
+          <input type="radio" id="work" name="category" value="Work" required>
+          <label for="work">Work</label>
+          <input type="radio" id="social" name="category" value="Social" required>
+          <label for="social">Social</label>
+          <input type="radio" id="entertainment" name="category" value="Entertainment" required>
+          <label for="entertainment">Entertainment</label>
+          <input type="radio" id="health" value="Health" required>
+          <label for="health">Health</label>
+          <input type="radio" id="news" name="category" value="News" required>
+          <label for="news">News</label>
+        </fieldset>
 
-       <label for="work">Work</label><br>
-       <input type="radio" id="work" name="category" value="work" required>
-       <label for="social">Social</label><br>
-       <input type="radio" id="social" name="category" value="social" required>
-       <label for="entertainment">Entertainment</label>
-       <input type="radio" id="entertainment" name="category" value="entertainment" required>
-       <label for="health">Health</label><br>
-       <input type="radio" id="health" value="health" required>
-       <label for="news">News</label><br>
-       <input type="radio" id="news" name="category" value="news" required>
-       <label for="tool_name">Tool Name</label>
-       <input id="tool_name" name="tool_name" required>
-       <label for="tool_description">Description</label>
-       <input id="tool_description" name="tool_description" required>
+        <label for="tool_name">Name</label>
+        <input id="tool_name" name="tool_name" required>
+
+        <label for="tool_description">Description</label>
+        <input id="tool_description" name="tool_description" required>
        
-       <label for="tool_link">Link</label>
-       <input id="tool_link" name="tool_link" required>
+       <label for="tool_link">Link https://www.</label>
+       <input id="tool_link" name="tool_link" placeholder="google.com" required>
        
        <label for="added_by">Username</label>
        <input id="added_by" name="added_by" required>
