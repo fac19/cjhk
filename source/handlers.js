@@ -13,8 +13,10 @@ const types = {
 
 // MODEL => TEMPLATE
 function homeHandler(request, response) {
-  console.log(request);
-  const filter = "Work";
+  let filter = "%";
+  request.on('data', chunk => (filter += chunk));
+  request.on('end', () => {
+    // console.log(filter);
   model
     .getTools(filter) // return tools object with name, likes, desc, user
     .then(tools => {
@@ -27,7 +29,7 @@ function homeHandler(request, response) {
       console.error(error);
       missingHandler(request, response);
     });
-
+  })
   //serves home page with SELECT query on database getTools() / filterTools()
 }
 
