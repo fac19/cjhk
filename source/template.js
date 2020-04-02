@@ -45,7 +45,7 @@ function printTools(tools) {
 function home(tools) {
   return htmlSkeleton(
     // Redirect Parameter 
-    `<a href='/add'><h2>Add a tool!</h2></a>`,
+    `<a class="add-tool-link" href='/add'><h2>Add a tool!</h2></a>`,
     // Content Parameter 
     `
     <div id="categoryIcon" class="cat">

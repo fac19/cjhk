@@ -6,16 +6,30 @@
 
 :root {
     font-family: 'Work Sans', sans-serif;
+    --text-colour:hsl(201, 24%, 14%);
+    --logo-colour:hsl(241, 24%, 39%);
 }
 
 body {
     margin: 2rem;
+    width: 100vw;
+    color: var(--text-colour);
 }
 
 .cat {
-    color: blue;
-    font-size: 5rem;
+    width: 80%;
+    display: flex;
+    font-size: 4rem;
     cursor: pointer;
+}
+
+.cat > a {
+    padding: 1rem;
+    color: var(--logo-colour);
+}
+
+.tool-card {
+    background-color: ;
 }
 
 form {
