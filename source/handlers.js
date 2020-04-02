@@ -14,7 +14,7 @@ const types = {
 function homeHandler(request, response) {
   // const filter = request
   model
-    .getTools('%') // return tools object with name, likes, desc, user
+    .getTools(`%`) // return tools object with name, likes, desc, user
     .then(tools => {
       templates.home(tools);
       response.writeHead(200, { "content-type": "text/html" });
@@ -62,6 +62,7 @@ function addToolHandler(request, response) {
     request.on('end', () => {
         const searchParams = new URLSearchParams(body);
         const data = Object.fromEntries(searchParams);
+        console.log(data)
         model
          .createTool(data)
          .then(() => {
