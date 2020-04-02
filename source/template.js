@@ -29,13 +29,14 @@ function printTools(tools) {
   return tools.map(tool => {
     return `
       <article class="tool-card"> 
-            <h2 class="tool-card__name">Tool Name: ${tool.tool_name}</h2>
-            <p class="tool-card__user">User Name: ${tool.added_by}</p>
-            <p class="tool-card__desc">Tool description: ${tool.tool_description}</p>
-            <p class="tool-card__link">Tool Link: ${tool.tool_link}</p>
+            <h2 class="tool-card__name">Name: ${tool.tool_name}</h2>
+            <p class="tool-card__desc">Description: ${tool.tool_description}</p>
+            <p class="tool-card__link">Link: ${tool.tool_link}</p>
+            <p class="tool-card__category">Category: ${tool.category}</p>
+            <p class="tool-card__user">Added By: ${tool.added_by}</p>
       </article>
       `;
-  });
+  }).join("");
 }
 
 function home(tools) {
@@ -60,21 +61,19 @@ function addPage() {
        <label for="entertainment">Entertainment</label>
        <input type="radio" id="entertainment" name="category" value="entertainment" required>
        <label for="health">Health</label><br>
-       <input type="radio" id="health" name="category" value="health" required>
+       <input type="radio" id="health" value="health" required>
        <label for="news">News</label><br>
        <input type="radio" id="news" name="category" value="news" required>
+       <label for="tool_name">Tool Name</label>
+       <input id="tool_name" name="tool_name" required>
+       <label for="tool_description">Description</label>
+       <input id="tool_description" name="tool_description" required>
        
-       <label for="tool-name">Tool Name</label>
-       <input id="tool-name" name="tool-name" required>
-
-       <label for="description">Description</label>
-       <input id="description" name="description" required>
+       <label for="tool_link">Link</label>
+       <input id="tool_link" name="tool_link" required>
        
-       <label for="link">Link</label>
-       <input id="link" name="link" required>
-       
-       <label for="username">Username</label>
-       <input id="username" name="username" required>
+       <label for="added_by">Username</label>
+       <input id="added_by" name="added_by" required>
        
        <button type="submit">Post tool</button>
      </form>`
