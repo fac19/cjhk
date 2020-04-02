@@ -1,7 +1,7 @@
 const model = require("./model");
 const handlers = require("./handlers");
 
-function htmlSkeleton(content) {
+function htmlSkeleton(redirect, content) {
   return `
 
     <!DOCTYPE html>
@@ -15,8 +15,9 @@ function htmlSkeleton(content) {
     </head>
     <body>
         <h1>SRV|VRS</h1>
+          ${redirect}
         <main>
-            ${content}
+          ${content}
         </main>
         <script src="public/main.js"></script>
     </body>
@@ -28,21 +29,28 @@ function printTools(tools) {
   return tools.map(tool => {
     return `
       <article class="tool-card"> 
-            <h2 class="tool-card__name">${tool.tool_name}</h2>
-            <p class="tool-card__user">${tool.user_name}</p>
-            <p class="tool-card__desc">${tool.description}</p>
-            <p class="tool-card__link">${tool.link}</p>
+            <h2 class="tool-card__name">Tool Name: ${tool.tool_name}</h2>
+            <p class="tool-card__user">User Name: ${tool.added_by}</p>
+            <p class="tool-card__desc">Tool description: ${tool.tool_description}</p>
+            <p class="tool-card__link">Tool Link: ${tool.tool_link}</p>
       </article>
       `;
   });
 }
 
 function home(tools) {
-  return htmlSkeleton(printTools(tools));
+  return htmlSkeleton(
+    // Redirect Parameter 
+    `<a href='/add'><h2>Add a tool!</h2></a>`,
+    // Content Parameter 
+    printTools(tools));
 }
 
 function addPage() {
   return htmlSkeleton(
+    // Redirect Parameter 
+    `<a href='/'><h2>Go back home!</h2></a>`,
+    // Content Parameter 
     `<form action="create-tool" method="POST">
 
        <label for="work">Work</label><br>
@@ -68,15 +76,17 @@ function addPage() {
        <label for="username">Username</label>
        <input id="username" name="username" required>
        
-       <button type="submit">Create user</button>
+       <button type="submit">Post tool</button>
      </form>`
   );
 }
 
 function missing() {
   return htmlSkeleton(
-      `<h1 class="error-title">Not Found</h1>
-      <a href='/' target="_blank"><h2 class='error-subtitle'>Go back home!</h2></a>`
+    // Redirect Parameter 
+    `<a href='/'><h2 class='error-subtitle'>Go back home!</h2></a>`,
+    // Content Parameter   
+    `<h1 class="error-title">Content Not Found</h1>`
   );
 }
 

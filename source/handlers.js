@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const model = require("./model");
-const templates = require("./templates");
+const templates = require("./template");
 const types = {
   html: "text/html",
   css: "text/css",
@@ -14,7 +14,7 @@ const types = {
 function homeHandler(request, response) {
   // const filter = request
   model
-    .getTools() // return tools object with name, likes, desc, user
+    .getTools('%') // return tools object with name, likes, desc, user
     .then(tools => {
       templates.home(tools);
       response.writeHead(200, { "content-type": "text/html" });
@@ -36,7 +36,7 @@ function publicHandler(request, response) {
   const type = types[extension];
 
   fs.readFile(path.join(__dirname, "..", url), (error, file) => {
-    console.log("publicHandler -> file", file);
+    // console.log("publicHandler -> file", file);
     if (error) {
       missingHandler(request, response);
     } else {
@@ -50,7 +50,6 @@ function addPageHandler(request, response) {
   response.writeHead(200, { "content-type": "text/html" });
   const formPage = templates.addPage();
   response.end(formPage);
-
   response.on("error", error => {
     console.error(error);
     missingHandler(request, response);
