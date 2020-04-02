@@ -29,9 +29,9 @@ function printTools(tools) {
     return `
       <article class="tool-card"> 
             <h2 class="tool-card__name">${tool.tool_name}</h2>
-            <p class="tool-card__user">${tool.user_name}</p>
-            <p class="tool-card__desc">${tool.description}</p>
-            <p class="tool-card__link">${tool.link}</p>
+            <p class="tool-card__user">${tool.added_by}</p>
+            <p class="tool-card__desc">${tool.tool_description}</p>
+            <p class="tool-card__link">${tool.tool_link}</p>
       </article>
       `;
   });
