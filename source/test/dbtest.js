@@ -5,33 +5,63 @@ const { getTools, createTool, addLove } = require("../model");
 
 test("Can get all user entries with getTools() function", t => {
   build().then(() => {
-    getTools(`%`)
+      getTools(`%`)
       .then(entries => {
-        const firstEntry = entries[0];
-        t.equal(firstEntry.category, "Entertainment");
-        t.end();
+          const firstEntry = entries[0];
+          t.equal(firstEntry.category, "Entertainment");
+          t.end();
       })
       .catch(error => {
-        t.error(error);
-        t.end();
+          t.error(error);
+          t.end();
       })
   });
 });
 
-test("Can get filtered user entries with getTools() function", t => {
-  build().then(() => {
+test("Can get unique IDs of each tool for use in creating cards", t => {
+build().then(() => {
+    getTools(`%`)
+    .then(entries => {
+        const firstEntry = entries[0];
+        t.equal(firstEntry.id, 1);
+        t.end();
+    })
+    .catch(error => {
+        t.error(error);
+        t.end();
+    })
+});
+});
+
+test("Can get filtered user entries with getTools() function (name)", t => {
+build().then(() => {
     getTools(`Work`)
-      .then(entries => {
+    .then(entries => {
         const firstEntry = entries[0];
         t.equal(firstEntry.tool_name, "Jitsi");
         t.end();
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         t.error(error);
         t.end();
-      })
-  });
+    })
 });
+});
+
+  test("Can get filtered user entries with getTools() function (id)", t => {
+    build().then(() => {
+      getTools(`News`)
+        .then(entries => {
+          const firstEntry = entries[0];
+          t.equal(firstEntry.id, 4);
+          t.end();
+        })
+        .catch(error => {
+          t.error(error);
+          t.end();
+        })
+    });
+  });
 
 test("Does filter return all filtered tools", t => {
   build().then(() => {
