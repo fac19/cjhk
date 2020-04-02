@@ -28,6 +28,13 @@ newsFilter.addEventListener("click", () => {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: filter,
-    });
+    })
+    // .then(async (html) => {
+    //     return await html;
+    // })
+    // .then(html => {
+    //     document.write(`${html}`);
+    // })
+    .catch(console.error);
 })
       

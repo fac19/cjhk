@@ -5,6 +5,7 @@ function router(request, response) {
   if (url === "/" && method === "GET") {
     handlers.homeHandler(request, response);
   } else if (url === "/" && method === "POST") {
+
     handlers.homeHandler(request, response);
   } else if (url.includes("public")) {
     handlers.publicHandler(request, response);

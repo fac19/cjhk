@@ -1,7 +1,7 @@
 const db = require("./database/connection");
 
 function getTools(filter){
-    return db.query(`SELECT * FROM user_input WHERE category LIKE '${filter}'`).then(result => result.rows);
+    return db.query(`SELECT * FROM user_input WHERE category LIKE '${filter}'`).then(result => result.rows);;
 }
 
 function createTool(userEntry){
