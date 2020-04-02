@@ -13,7 +13,6 @@ const types = {
 
 // MODEL => TEMPLATE
 function homeHandler(request, response) {
-  console.log(request);
   const filter = "Work";
   model
     .getTools(filter) // return tools object with name, likes, desc, user
