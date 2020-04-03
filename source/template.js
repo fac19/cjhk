@@ -10,6 +10,7 @@ function htmlSkeleton(redirect, content) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Survive the virus</title>
+        <link rel='shortcut icon' href='https://ps.w.org/covid-19/assets/icon.svg?rev=2262770' type='image/x-icon'> 
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/743c019083.js" crossorigin="anonymous"></script>
         <link href="public/styles.css" rel="stylesheet">
@@ -66,31 +67,40 @@ function addPage() {
     `<form action="create-tool" method="POST">
         <fieldset>
           <legend>Category:</legend>
+          <label class="radio-label" for="work"><i class="fas fa-briefcase"></i>
           <input type="radio" id="work" name="category" value="Work" required>
-          <label for="work">Work</label>
+          </label>
+          <label class="radio-label" for="social"><i class="fas fa-people-arrows"></i>
           <input type="radio" id="social" name="category" value="Social" required>
-          <label for="social">Social</label>
+          </label>
+          <label class="radio-label" for="entertainment"><i class="fas fa-photo-video"></i>
           <input type="radio" id="entertainment" name="category" value="Entertainment" required>
-          <label for="entertainment">Entertainment</label>
+          </label>
+          <label class="radio-label" for="health"><i class="fas fa-heartbeat"></i>
           <input type="radio" id="health" value="Health" required>
-          <label for="health">Health</label>
+          </label>
+          <label class="radio-label" for="news"><i class="far fa-newspaper"></i>
           <input type="radio" id="news" name="category" value="News" required>
-          <label for="news">News</label>
+          </label>
         </fieldset>
 
-        <label for="tool_name">Name</label>
-        <input id="tool_name" name="tool_name" required>
+        <label class='user-info-label' for="tool_name">Name
+        <input class="user-info" id="tool_name" name="tool_name" required>
+        </label>
 
-        <label for="tool_description">Description</label>
-        <input id="tool_description" name="tool_description" required>
+        <label class='user-info-label' for="tool_description">Description
+        <input class="user-info" id="tool_description" name="tool_description" required>
+        </label>
        
-       <label for="tool_link">Link https://www.</label>
-       <input id="tool_link" name="tool_link" placeholder="google.com" required>
+       <label class='user-info-label' for="tool_link">Link https://www.
+       <input class="user-info" id="tool_link" name="tool_link" placeholder="google.com" required>
+       </label>
        
-       <label for="added_by">Username</label>
-       <input id="added_by" name="added_by" required>
+       <label class='user-info-label' for="added_by">Username
+       <input class="user-info" id="added_by" name="added_by" required>
+       </label>
        
-       <button type="submit">Post tool</button>
+       <button class="post-tool-button" type="submit">Post tool</button>
      </form>`
   );
 }
