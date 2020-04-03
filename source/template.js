@@ -16,7 +16,7 @@ function htmlSkeleton(redirect, content) {
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>SRV|VRS</h1>
+        <h1 class="heading-logo">SRV|VRS</h1>
           ${redirect}
         <main>
           ${content}
@@ -32,7 +32,7 @@ function printTools(tools) {
     return `
       <article id="tool_${tool.id}" class="tool-card"> 
             <h2 class="tool-card__name">${tool.tool_name}</h2>
-            <a class="tool-card__love-icon"><i class="fas fa-heart"></i></a><p>${tool.love}</p>
+            <p class="tool-card__love-icon"><a><i class="fas fa-heart"></i></a><span>${tool.love}</span></p>
             <p class="tool-card__user">Added by: ${tool.added_by}</p>
             <p class="tool-card__desc">What is it: ${tool.tool_description}</p>
             <a class="tool-card__link" href="https://www.${tool.tool_link}">Link</a>
@@ -45,7 +45,7 @@ function printTools(tools) {
 function home(tools) {
   return htmlSkeleton(
     // Redirect Parameter 
-    `<a href='/add'><h2>Add a tool!</h2></a>`,
+    `<a class="new-page-link" href='/add'>Add a tool!</a>`,
     // Content Parameter 
     `
     <div id="categoryIcon" class="cat">
@@ -61,7 +61,7 @@ function home(tools) {
 function addPage() {
   return htmlSkeleton(
     // Redirect Parameter 
-    `<a href='/'><h2>Go back home!</h2></a>`,
+    `<a class="new-page-link" href='/'>Go back home!</a>`,
     // Content Parameter 
     `<form action="create-tool" method="POST">
         <fieldset>

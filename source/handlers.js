@@ -13,20 +13,22 @@ const types = {
 
 // MODEL => TEMPLATE
 function homeHandler(request, response) {
-  const filter = "Work";
-  model
-    .getTools(filter) // return tools object with name, likes, desc, user
-    .then(tools => {
-      templates.home(tools);
-      response.writeHead(200, { "content-type": "text/html" });
-      const html = templates.home(tools);
-      response.end(html);
-    })
-    .catch(error => {
-      console.error(error);
-      missingHandler(request, response);
-    });
-
+  let filter = "%";
+  request.on('data', chunk => (filter += chunk));
+  request.on('end', () => {
+    model
+      .getTools(filter) // return tools object with name, likes, desc, user
+      .then(tools => {
+        templates.home(tools);
+        response.writeHead(200, { "content-type": "text/html" });
+        const html = templates.home(tools);
+        response.end(html);
+      })
+      .catch(error => {
+        console.error(error);
+        missingHandler(request, response);
+      });
+  })
   //serves home page with SELECT query on database getTools() / filterTools()
 }
 
