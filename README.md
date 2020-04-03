@@ -24,13 +24,17 @@ PGDATABASE=srvvrs_db
 PGUSER=myuser
 PGPASSWORD=mypassword
 ```
+6. Comment out the following line on your `connection.js` file which connects to the Heroku database
 
-6. Run `psql` to enter Postgres CLI
-7. Connect to database `# \c srvvrs_db`
-8. Initialise database `# \i source/database/init.sql`
-9. Run `$ npm run dev` to run app on localhost
-10. Run `psql` and connect to test database `# \c srvvrs_test`
-11. Run `$ npm test` to run tests
+```
+// connectionString: process.env.DATABASE_URL,
+```
+7. Run `psql` to enter Postgres CLI
+8. Connect to database `# \c srvvrs_db`
+9. Initialise database `# \i source/database/init.sql`
+10. Run `$ npm run dev` to run app on localhost
+11. Run `psql` and connect to test database `# \c srvvrs_test`
+12. Run `$ npm test` to run tests
 
 ## Database Schema
 
