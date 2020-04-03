@@ -1,10 +1,10 @@
 # Week 5 Project: SRV|VRS
 
-![](https://ps.w.org/covid-19/assets/icon.svg?rev=2262770 =300x)
+![](https://ps.w.org/covid-19/assets/icon.svg?rev=2262770)
 
 ---
 
-![](https://i.imgur.com/8f1AX3H.png =800x)
+![](https://i.imgur.com/8f1AX3H.png)
 
 ---
 
@@ -52,7 +52,7 @@ https://miro.com/app/board/o9J_kuF5bdE=/
 
 ---
 
-![](https://i.imgur.com/nSiNRKR.png =750x)
+![](https://i.imgur.com/nSiNRKR.png)
 
 ---
 
@@ -79,13 +79,13 @@ CREATE TABLE users (
 ---
 
 ## Struggles 🥊
-![](https://media.giphy.com/media/wZHzd1ZL3oENO/giphy.gif =400x)
+![](https://media.giphy.com/media/wZHzd1ZL3oENO/giphy.gif)
 
 ---
 
 ### The f&%^ing filter 
 
-![](https://i.imgur.com/6C3Nw0Y.png =700x)
+![](https://i.imgur.com/6C3Nw0Y.png)
 
 ---
 
@@ -157,7 +157,7 @@ When this happens...delete `package-lock.json` and `node_modules` and `npm insta
 
 ### EADDRINUSE: address already in use :::3000 💀
 
-![](https://media.giphy.com/media/tei52cyY5mroA/giphy.gif =400x200)
+![](https://media.giphy.com/media/tei52cyY5mroA/giphy.gif)
 
 ```
 sudo lsof -i :3000
@@ -203,7 +203,7 @@ test("Can get filtered user entries with getTools() function (id)", t => {
 
 ---
 
-![](https://i.imgur.com/v3ZtdkI.png =500x)
+![](https://i.imgur.com/v3ZtdkI.png)
 
 ---
 
@@ -217,7 +217,7 @@ test("Can get filtered user entries with getTools() function (id)", t => {
 
 ## Somehow deploying on heroku...
 
-![](https://media.giphy.com/media/H6JdkRnhXQaImiCYp2/giphy.gif =300x)
+![](https://media.giphy.com/media/H6JdkRnhXQaImiCYp2/giphy.gif)
 
 ```javascript=
 connection.js file 
