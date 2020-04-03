@@ -65,6 +65,7 @@ function addToolHandler(request, response) {
     request.on('end', () => {
         const searchParams = new URLSearchParams(body);
         const data = Object.fromEntries(searchParams);
+        data.love = 0;
         console.log(data)
         model
          .createTool(data)
