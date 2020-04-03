@@ -39,6 +39,15 @@ body {
   margin: 1rem;
 }
 
+.home-description {
+  text-align: center;
+  width: 50vw;
+}
+
+.home-filter-description {
+  text-align: center;
+}
+
 .new-page-link {
   padding: 0.5rem;
   text-decoration: none;
@@ -66,6 +75,7 @@ body {
 }
 
 .tool-card {
+  width: 70vw;
   margin: 1rem;
   padding: 1rem;
   background-color: var(--card-lilac);
@@ -110,7 +120,7 @@ body {
 
 form {
   position: relative;
-  background-color: white;
+  background-color: var(--card-lilac);
   width: 80vw;
   height: 90%;
   margin: 0 auto;
@@ -124,8 +134,9 @@ form {
 }
 
 .post-tool-button {
-  border: 1px solid var(--link-colour);
-  color: var(--link-colour);
+  border: 1px solid var(--logo-colour);
+  border-radius: 5px;
+  color: var(--logo-colour);
   padding: 0.5rem 1rem;
   width: 8rem;
   height: 3.5rem;
@@ -137,11 +148,6 @@ form {
 
 fieldset {
   width: 80%;
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr; */
-  /* display: flex;
-  flex-direction: row; */
   margin: 0.5rem;
   font-size: 1.5rem;
 }
@@ -160,6 +166,9 @@ label {
 
 .user-info {
     margin-left: 1rem;
+    width: 100%;
+    display: flex;
+    align-self: flex-end;
 }
 
 .user-info-label {
@@ -171,15 +180,13 @@ label {
 
 
 @media only screen and (min-width: 800px) {
+    .home-description {
+      width: 80vw;
+    }
     form {
         width: 60vw;
     }
-
     .cat {
         font-size: 4rem;
-    }
-
-    input, label, fieldset {
-        width: 60%;
     }
 }

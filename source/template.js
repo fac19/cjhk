@@ -46,9 +46,11 @@ function printTools(tools) {
 function home(tools) {
   return htmlSkeleton(
     // Redirect Parameter 
-    `<a class="new-page-link" href='/add'>Add a tool!</a>`,
+    `<h2 class="home-description">A collection of tools to help you survive social distancing!</h2>
+    <a class="new-page-link" href='/add'>Add a tool</a>`,
     // Content Parameter 
     `
+    <p class="home-filter-description">Select a category to filter the results:</p>
     <div id="categoryIcon" class="cat">
       <a class="cat__work-icon"><i class="fas fa-briefcase"></i></a>
       <a class="cat__social-icon"><i class="fas fa-people-arrows"></i></a>
@@ -62,7 +64,7 @@ function home(tools) {
 function addPage() {
   return htmlSkeleton(
     // Redirect Parameter 
-    `<a class="new-page-link" href='/'>Go back home!</a>`,
+    `<a class="new-page-link" href='/'>Go back home</a>`,
     // Content Parameter 
     `<form action="create-tool" method="POST">
         <fieldset>
@@ -77,7 +79,7 @@ function addPage() {
           <input type="radio" id="entertainment" name="category" value="Entertainment" required>
           </label>
           <label class="radio-label" for="health"><i class="fas fa-heartbeat"></i>
-          <input type="radio" id="health" value="Health" required>
+          <input type="radio" id="health" name="category" value="Health" required>
           </label>
           <label class="radio-label" for="news"><i class="far fa-newspaper"></i>
           <input type="radio" id="news" name="category" value="News" required>
