@@ -1,14 +1,16 @@
-filter = '%';
+var filter = '%';
 
-workFilter = document.querySelector(".cat__work-icon");
-socialFilter = document.querySelector(".cat__social-icon");
-entFilter = document.querySelector(".cat__ent-icon");
-healthFilter = document.querySelector(".cat__health-icon");
-newsFilter = document.querySelector(".cat__news-icon");
+var workFilter = document.querySelector(".cat__work-icon");
+var socialFilter = document.querySelector(".cat__social-icon");
+var entFilter = document.querySelector(".cat__ent-icon");
+var healthFilter = document.querySelector(".cat__health-icon");
+var newsFilter = document.querySelector(".cat__news-icon");
+
+// IN THE FUTURE WE WOULD REFACTOR THE BELOW FUNCTIONS!
 
 workFilter.addEventListener("click", async () => {
     filter = 'Work';
-    newHtml = await fetch ("/", {
+    var newHtml = await fetch ("/", {
         method: "POST",
         headers: {"Content-Type": "application/javascript"},
         body: filter,
@@ -20,7 +22,7 @@ workFilter.addEventListener("click", async () => {
 
 socialFilter.addEventListener("click", async () => {
     filter = 'Social';
-    newHtml = await fetch ("/", {
+    var newHtml = await fetch ("/", {
         method: "POST",
         headers: {"Content-Type": "application/javascript"},
         body: filter,
@@ -32,7 +34,7 @@ socialFilter.addEventListener("click", async () => {
 
 entFilter.addEventListener("click", async () => {
     filter = 'Entertainment';
-    newHtml = await fetch ("/", {
+    var newHtml = await fetch ("/", {
         method: "POST",
         headers: {"Content-Type": "application/javascript"},
         body: filter,
@@ -44,7 +46,7 @@ entFilter.addEventListener("click", async () => {
 
 healthFilter.addEventListener("click", async () => {
     filter = 'Health';
-    newHtml = await fetch ("/", {
+    var newHtml = await fetch ("/", {
         method: "POST",
         headers: {"Content-Type": "application/javascript"},
         body: filter,
@@ -56,7 +58,7 @@ healthFilter.addEventListener("click", async () => {
 
 newsFilter.addEventListener("click", async () => {
     filter = 'News';
-    newHtml = await fetch ("/", {
+    var newHtml = await fetch ("/", {
         method: "POST",
         headers: {"Content-Type": "application/javascript"},
         body: filter,
