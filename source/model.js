@@ -1,7 +1,13 @@
 const db = require("./database/connection");
 
+// THE BELOW DOES NOT PROTECT AGAINST SQL INJECTION FOR POST REQUESTS
+// function getTools(filter){
+//     return db.query(`SELECT * FROM user_input WHERE category LIKE '${filter}'`).then(result => result.rows);;
+// }
+
+// THE BELOW DOES PROTECT AGAINST SQL INJECTION (HOPEFULLY)
 function getTools(filter){
-    return db.query(`SELECT * FROM user_input WHERE category LIKE '${filter}'`).then(result => result.rows);;
+    return db.query("SELECT * FROM user_input WHERE category LIKE ($1)", [`${filter}`]).then(result => result.rows);;
 }
 
 function createTool(userEntry){
