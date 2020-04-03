@@ -5,9 +5,9 @@ function getTools(filter){
 }
 
 function createTool(userEntry){
-    const values = [userEntry.category, userEntry.tool_name, userEntry.tool_description, userEntry.tool_link, userEntry.added_by];
+    const values = [userEntry.category, userEntry.tool_name, userEntry.tool_description, userEntry.tool_link, userEntry.added_by, userEntry.love];
     return db.query(
-        "INSERT INTO user_input(category, tool_name, tool_description, tool_link, added_by) VALUES($1, $2, $3, $4, $5)",
+        "INSERT INTO user_input(category, tool_name, tool_description, tool_link, added_by, love) VALUES($1, $2, $3, $4, $5, $6)",
         values
     );
 }
