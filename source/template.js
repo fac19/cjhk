@@ -12,7 +12,6 @@ function htmlSkeleton(redirect, content) {
         <title>Survive the virus</title>
         <link rel='shortcut icon' href='https://ps.w.org/covid-19/assets/icon.svg?rev=2262770' type='image/x-icon'> 
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/743c019083.js" crossorigin="anonymous"></script>
         <link href="public/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     </head>
@@ -23,6 +22,7 @@ function htmlSkeleton(redirect, content) {
           ${content}
         </main>
         <script src="public/main.js"></script>
+        <script src="https://kit.fontawesome.com/8edb3d78c9.js" crossorigin="anonymous"></script>
     </body>
     </html>
     `;
@@ -36,7 +36,7 @@ function printTools(tools) {
             <p class="tool-card__love-icon"><a><i class="fas fa-heart"></i></a><span>${tool.love}</span></p>
             <p class="tool-card__user">Added by: ${tool.added_by}</p>
             <p class="tool-card__desc">What is it: ${tool.tool_description}</p>
-            <a class="tool-card__link" href="https://www.${tool.tool_link}">Link</a>
+            <a class="tool-card__link" href="https://www.${tool.tool_link}"><i class="fas fa-link"></i></a>
             <p class="tool-card__category">Category: ${tool.category}</p>
       </article>
       `;
